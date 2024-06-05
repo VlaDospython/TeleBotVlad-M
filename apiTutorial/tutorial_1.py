@@ -35,11 +35,11 @@ for x in lst:
 >Hidden by default part of the expandable block quotation started
 >Expandable block quotation continued
 >The last line of the expandable block quotation with the expandability mark||"""
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['bold'])
 def command_start(message):
-    text = str(message)
+    text = f"*{str(message.text)[1:]}*"
     bot.send_message(message.chat.id,
-                     msg)
+                     text)
 
 
 if __name__ == '__main__':
